@@ -1,0 +1,39 @@
+import random
+
+play_again = "yes"
+
+score_user = 0
+score_bot = 0
+
+while play_again == "yes":
+    bot = random.choice(['r','p','s'])
+    user = input("rock, paper or scisors: ")
+    if user == "r" and bot == 'p':
+        print("You lost!")
+        score_bot += 1
+    elif user == "r" and bot == 'r':
+        print("tie!")
+    elif user == 'r' and bot == 's':
+        print("you won!")
+        score_user += 1
+    elif user == 'p' and bot == 'r':
+        print("you won!")
+        score_user += 1
+    elif user == 'p' and bot == 'p':
+        print("tie!")
+    elif user == "p" and bot == 's':
+        print("you lost!")
+        score_bot += 1
+    elif user == 's' and bot == 'r':
+        print("you lost!")
+    elif user == 's' and bot == 'p':
+        print("you won!")
+        score_user += 1
+    elif user == 's' and bot == 's':
+        print("tie!")
+    play_again = input("play again?: ")
+if score_user > score_bot:
+    print("you won the match!")
+else:
+    print("you lost." )
+print(f"your score: {score_user},\nbot score: {score_bot}")
